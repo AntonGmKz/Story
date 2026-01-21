@@ -82,9 +82,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>WKWebView Test</h1>
+        <h1>Тест Закрытия</h1>
         <button class="button" id="closeButton" onclick="closeApp()">
-            Закрыть приложение
+            Нажать нежно
         </button>
         <div id="status" class="status"></div>
     </div>
@@ -95,7 +95,7 @@
                 // Проверяем наличие message handler перед вызовом
                 if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.obs_close_app) {
                     window.webkit.messageHandlers.obs_close_app.postMessage({
-                        action: 'close'
+                        animated: true
                     });
                     showStatus('Сообщение отправлено на нативную сторону', 'success');
                 } else {
