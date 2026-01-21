@@ -82,7 +82,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>AppCloser</h1>
+        <h1>AppCloser001</h1>
         <button class="button" id="closeButton" onclick="closeApp()">
             Нажать нежно
         </button>
@@ -94,7 +94,7 @@
             try {
                 // Проверяем наличие message handler перед вызовом
                 if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.obs_close_app) {
-                    window.webkit.messageHandlers.obs_close_app.postMessage();
+                    window.webkit.messageHandlers.obs_close_app.postMessage({});
                     showStatus('Сообщение отправлено на нативную сторону', 'success');
                 } else {
                     showStatus('Message handler не найден. Убедитесь, что WKWebView настроен правильно.', 'error');
